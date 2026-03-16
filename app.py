@@ -4,7 +4,7 @@ from database import query, execute
 from reports import tax_export
 from config import Config
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 app.config.from_object(Config)
 
 @app.route("/")
