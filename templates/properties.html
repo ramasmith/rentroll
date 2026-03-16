@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Add Property</h3>
+
+<form method="post">
+<input name="name" placeholder="Property Name" class="form-control mb-2">
+<input name="address" placeholder="Address" class="form-control mb-2">
+<input name="price" placeholder="Purchase Price" class="form-control mb-2">
+<button class="btn btn-primary">Add</button>
+</form>
+
+<hr>
+
+<ul>
+{% for p in properties %}
+<li>{{p.name}} - {{p.address}} <a href="/units/{{p.id}}">Units</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

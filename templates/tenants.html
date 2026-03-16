@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Tenants</h3>
+
+<form method="post">
+<input name="first" placeholder="First Name" class="form-control mb-2">
+<input name="last" placeholder="Last Name" class="form-control mb-2">
+<input name="email" placeholder="Email" class="form-control mb-2">
+<input name="phone" placeholder="Phone" class="form-control mb-2">
+<button class="btn btn-primary">Add Tenant</button>
+</form>
+
+<hr>
+
+<ul>
+{% for t in tenants %}
+<li>{{t.first_name}} {{t.last_name}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

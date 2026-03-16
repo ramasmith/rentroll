@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>Transactions</h3>
+
+<form method="post">
+
+<input name="date" type="date" class="form-control mb-2">
+<input name="property" placeholder="Property ID" class="form-control mb-2">
+<input name="unit" placeholder="Unit ID" class="form-control mb-2">
+
+<select name="type" class="form-control mb-2">
+<option value="income">Income</option>
+<option value="expense">Expense</option>
+</select>
+
+<input name="category" placeholder="Category" class="form-control mb-2">
+<input name="amount" placeholder="Amount" class="form-control mb-2">
+<input name="notes" placeholder="Notes" class="form-control mb-2">
+
+<button class="btn btn-success">Add Transaction</button>
+
+</form>
+
+<hr>
+
+<table class="table">
+<tr>
+<th>Date</th>
+<th>Category</th>
+<th>Amount</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+
+{% for t in transactions %}
+<tr>
+<td>{{t.date}}</td>
+<td>{{t.category}}</td>
+<td>{{t.amount}}</td>
+<td>{{t.type}}</td>
+<td>{{t.notes}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
