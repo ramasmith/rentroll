@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<h3>Transactions</h3>
+
+<table class="table">
+<tr>
+<th>Date</th>
+<th>Property</th>
+<th>Unit</th>
+<th>Type</th>
+<th>Category</th>
+<th>Amount</th>
+<th>Notes</th>
+</tr>
+
+{% for t in transactions %}
+<tr>
+<td>{{t.date}}</td>
+<td>{{t.property}}</td>
+<td>{{t.unit}}</td>
+<td>{{t.type}}</td>
+<td>{{t.category}}</td>
+<td>{{t.amount}}</td>
+<td>{{t.notes}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

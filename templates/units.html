@@ -1,0 +1,21 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<h3>Units</h3>
+
+<form method="post">
+<input name="name" placeholder="Unit name" class="form-control mb-2">
+<input name="rent" placeholder="Monthly rent" class="form-control mb-2">
+<button class="btn btn-primary">Add Unit</button>
+</form>
+
+<hr>
+
+<ul>
+{% for u in units %}
+<li>{{u.name}} (${{u.rent}})</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
